@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/test', function(){
+    return view("test");
+});
+
 Route::resource('/mould','App\Http\Controllers\ButtonMouldController');
 Route::resource('/companydetails','App\Http\Controllers\CompanyDetailsController');
 Route::resource('/items','App\Http\Controllers\ItemsController');
